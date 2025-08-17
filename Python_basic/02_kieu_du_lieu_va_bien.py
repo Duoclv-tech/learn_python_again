@@ -51,19 +51,19 @@ print(f"Danh sách các từ: {s.split()}")
 
 
 # CÂU HỎI 4: Variables và assignment
-# a) Gán giá trị 10 cho biến x và 20 cho biến y, sau đó hoán đổi giá trị của chúng
-# b) Gán cùng giá trị 100 cho 3 biến a, b, c trong một dòng code
-# c) Gán các giá trị 5, 10, 15 cho ba biến d, e, f trong một dòng code
+# a) Gán giá trị 10 cho biến x và 20 cho biến y, sau đó hoán đổi giá trị của chúng =>  x = 10 y =20  => x, y = y, x
+# b) Gán cùng giá trị 100 cho 3 biến a, b, c trong một dòng code => a = b = c = 100
+# c) Gán các giá trị 5, 10, 15 cho ba biến d, e, f trong một dòng code => d,e,f = 5, 10, 15
 
 # Code của bạn ở đây:
 
 
 
 # CÂU HỎI 5: Type conversion và type checking
-# a) Chuyển số 7.8 thành số nguyên và in kết quả
-# b) Chuyển số nguyên 42 thành chuỗi và nối với chuỗi " là câu trả lời"
-# c) Kiểm tra kiểu dữ liệu của biến x sau khi gán x = 5.0
-# d) Chuyển chuỗi "3.14" thành số thực và cộng với 2.0
+# a) Chuyển số 7.8 thành số nguyên và in kết quả => int(7.8)
+# b) Chuyển số nguyên 42 thành chuỗi và nối với chuỗi " là câu trả lời"  => f"{42} là câu trả lời"
+# c) Kiểm tra kiểu dữ liệu của biến x sau khi gán x = 5.0 => type(x)
+# d) Chuyển chuỗi "3.14" thành số thực và cộng với 2.0 => float(3.14) + 2.0
 
 # Code của bạn ở đây:
 
@@ -81,6 +81,22 @@ print(f"Danh sách các từ: {s.split()}")
 
 # Code của bạn ở đây:
 
+def cul_IBM():
+    x, y = input("nhập chiều cao và cân nặng").split()
+    x = float(x) / 100  # Chuyển từ cm sang m
+    y = float(y)
+    if x <= 0 or y <= 0:
+        print("Chiều cao và cân nặng phải là số dương!")
+        return
+    bmi = y / (x ** 2)
+    bmi_rounded = round(bmi, 2)
+    print(f"Chỉ số BMI của bạn là: {bmi_rounded}")
+    if bmi < 18.5:
+        print("Phân loại: Thiếu cân")
+    elif 18.5 <= bmi < 25.0:
+        print("Phân loại: Bình thường")
+    elif 25.0 <= bmi < 30.0:
+        print("Phân loại: Thừa cân")
 
 
 # BÀI TẬP NÂNG CAO 2:
