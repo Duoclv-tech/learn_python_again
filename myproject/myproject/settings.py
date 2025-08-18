@@ -25,8 +25,7 @@ SECRET_KEY = 'django-insecure-nmc*0-0x1^*=-t=ql#hw)t10)voxbj6)ro2$8o$@f%(5(7#f!1
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
-
+ALLOWED_HOSTS = ["localhost", "127.0.0.1"]
 
 # Application definition
 
@@ -37,6 +36,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'library',
 ]
 
 MIDDLEWARE = [
@@ -75,8 +75,15 @@ WSGI_APPLICATION = 'myproject.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'django_db',         # Tên database
+        'USER': 'root',       # Tên user MySQL từ docker-compose
+        'PASSWORD': 'root_password', # Mật khẩu MySQL từ docker-compose
+        'HOST': '127.0.0.1',                # Tên service trong docker-compose
+        'PORT': '3306',              # Port MySQL (mặc định: 3306)
+        'OPTIONS': {
+            'charset': 'utf8mb4',    # Đảm bảo hỗ trợ Unicode
+        },
     }
 }
 
